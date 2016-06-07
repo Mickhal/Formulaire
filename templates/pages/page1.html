@@ -1,0 +1,38 @@
+<form name="formSkwarel">	
+	<fieldset>
+		<legend>Coordonnées: </legend>
+		<label class="lb" >Nom: </label> <input ng-model="nomUser" class="txtField" type="text" placeholder="Saisissez votre nom" required/> 
+		<br/>
+		<label class="lb" >Prénom: </label> <input ng-model="prenomUser" class="txtField" type="text" placeholder="Saisissez votre prénom" required/>
+		<br/>
+		<label>Genre: </label> M <input ng-model="genreUser" value="Homme" type="radio" name="genre"/> F <input ng-model="genreUser" value="Femme" type="radio" name="genre"/>
+		<br/>
+
+
+
+		<label>Date de naissance: </label> <input type="date" name="dateN" ng-model="dateNaissanceUser"  placeholder="aaaa-mm-jj" required/>
+		
+		
+		<span class="error" ng-show="formSkwarel.dateN.$error.date">
+			Veuillez saisir une date valide</span>
+	
+
+		<br>
+		<br>
+		<label class="lb" >E-mail: </label> <input ng-model="mailUser" class="txtField" type="email" placeholder="Saisissez votre @mail" required/>
+	</fieldset>
+
+	<input class="validation" type="submit" value="Envoyer"> <input class="validation" type="reset" value="Effacer"/>
+</form>
+
+<h3>Enregistrement nouveau client: </h3>
+
+<table style="width:100%">
+	<tr>
+		<td>Nom: {{nomUser}} </td> 
+		<td>Prénom: {{prenomUser}} </td>
+		<td>Genre: {{genreUser}} </td>
+		<td>Date de naissance: {{dateNaissanceUser | date: 'dd/MM/yyyy'}} </td>
+		<td>Mail: {{mailUser}} </td>
+	</tr>
+</table>
